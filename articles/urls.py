@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+]
+
+# The api/ part of the url is handled by this file. Any part of the url after api/ is handled by rest_api.urls.py
+urlpatterns += [
+    path('api/', include('rest_api.urls')),
 ]
