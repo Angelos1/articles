@@ -56,6 +56,10 @@ class Category(models.Model):
     """Model representing article category."""
     name = models.CharField(primary_key=True, max_length=200, help_text='Enter an article category (e.g. Sports)')
 
+    class Meta:
+        #Change the name displayed in the admin area. Default would have been Categorys(model name + 's')
+        verbose_name_plural = 'Categories' 
+
     def __str__(self):
         """String for representing the Category object."""
         return self.name
