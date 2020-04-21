@@ -7,6 +7,6 @@ from .serializers import ArticlesSerializer
 
 # Handles the /articles request and returns the response (list of articles)
 class ListArticlesView(generics.ListAPIView):
-
+    model = Article
     queryset = Article.objects.all()
     serializer_class = ArticlesSerializer

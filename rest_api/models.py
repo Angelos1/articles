@@ -6,6 +6,8 @@ from datetime import date
 
 class Article(models.Model):
     """Model representing an article."""
+    # id = models.AutoField(primary_key=True) # Also to be used for pagination ordering
+
     title = models.CharField(max_length=200)
 
     summary = models.TextField(max_length=1000, help_text='Enter a brief description of the article')
