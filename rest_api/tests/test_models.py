@@ -1,5 +1,7 @@
-"""The model tests below are not exhaustive. It is just some examples to illustrate the TestCase library
-All the tests will be successful except the one defined by the method 'test_title_max_length_MEANT_TO_FAIL' """
+"""
+The model tests below are not exhaustive. It is just some examples to illustrate the TestCase library
+All the tests will be successful except the one defined by the method 'test_title_max_length_MEANT_TO_FAIL'
+"""
 
 import datetime
 from django.test import TestCase
