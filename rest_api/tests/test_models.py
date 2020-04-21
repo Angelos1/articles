@@ -10,13 +10,15 @@ class ArticleModelTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        # This method runs only once to create the relevant objects (Article Model object)
+        # This method runs only once to create the relevant objects (Article Model)
         Article.objects.create(title='Big Bang', summary='Is the Big Bang a theory or reality',
                                content='loads of content...', published_status='a',
                                published_date=datetime.datetime(2020, 5, 17))
 
-    """testing that the label of the published_status field is labelled as expected.
-    If a verbose_name is not specified in the model it just replaces the underscore with spaces"""
+    """
+    testing that the published_status field is labelled as expected.
+    If a verbose_name is not specified in the model the label just replaces the underscores with spaces
+    """
     def test_published_status_label(self):
         article = Article.objects.get(id=1)
         field_label = article._meta.get_field('published_status').verbose_name
@@ -24,7 +26,7 @@ class ArticleModelTest(TestCase):
 
     """testing that the label of the published_date field is labelled as expected"""
     def test_published_date_label(self):
-        article=Article.objects.get(id=1)
+        article = Article.objects.get(id=1)
         field_label = article._meta.get_field('published_date').verbose_name
         self.assertEquals(field_label, 'published date')
 
@@ -45,7 +47,7 @@ class AuthorModelTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        # This method runs only once to create the relevant objects (Author Model object)
+        # This method runs only once to create the relevant objects (Author Model)
         Author.objects.create(first_name='Nick', last_name='Nicolaou')
 
     """testing that the admin panel display of the Author model is 'Author.last_name, Author.firstname' """

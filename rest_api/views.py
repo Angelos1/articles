@@ -1,11 +1,9 @@
-from django.shortcuts import render
 from rest_framework import generics
 from .models import Article
 from .serializers import ArticlesSerializer
 
-# Create your views here.
 
-# Handles the /articles request and returns the response (list of articles)
+# Handles the '/api/articles' request and returns the response (paginated list of articles)
 class ListArticlesView(generics.ListAPIView):
     model = Article
     queryset = Article.objects.all()

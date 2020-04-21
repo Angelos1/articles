@@ -1,30 +1,25 @@
 from django.db import models
-from django.urls import reverse
-import uuid
-from django.contrib.auth.models import User
-from datetime import date
 
 class Article(models.Model):
     """Model representing an article."""
-    # id = models.AutoField(primary_key=True) # Also to be used for pagination ordering
 
     title = models.CharField(max_length=200)
 
     summary = models.TextField(max_length=1000, help_text='Enter a brief description of the article')
 
-    #Check content lenght
     content = models.TextField(help_text='Enter the article content')
 
-    #The keys from the key/value pair below are stored in the db and the values are displayed in the admin area
     STATUS_CODES = (
         ('n', 'None'),
         ('nc', 'Needs Content'),
         ('nr', 'Needs Review'),
         ('a', 'Approved'),
     )
+
+    # The keys from the key/value pair above are stored in the db and the values are displayed in the admin area
     published_status = models.CharField(
-        max_length = 2,
-        choices=STATUS_CODES, # this is where the status field takes its values from
+        max_length=2,
+        choices=STATUS_CODES, # this is where the status field takes its db and display values from
         blank=True,
         default='n',
         help_text='Article status',
@@ -57,8 +52,8 @@ class Category(models.Model):
     name = models.CharField(primary_key=True, max_length=200, help_text='Enter an article category (e.g. Sports)')
 
     class Meta:
-        #Change the name displayed in the admin area. Default would have been Categorys(model name + 's')
-        verbose_name_plural = 'Categories' 
+        #Change the plural name displayed in the admin area. Default would have been Categorys(model name + 's')
+        verbose_name_plural = 'Categories'
 
     def __str__(self):
         """String for representing the Category object."""
