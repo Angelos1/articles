@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
-#comment this out to deactivate pagination
+# comment this out to deactivate pagination
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'paginations.CustomCursorPagination', # custom pagination class defined in paginations.py
     'PAGE_SIZE': 2,
