@@ -1,6 +1,6 @@
 # Instructions
 
-Instructions for running interacting with the *articles* Django app.
+Instructions for running and interacting with the *articles* Django app.
 
 These instructions will guide you to:
 * clone the repository
